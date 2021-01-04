@@ -147,7 +147,6 @@
     /*background-color: #000;*/
     top: calc(50% - 5px);
     left: -5px;
-    cursor: pointer;
 }
 .start-point i {
     color: #fff;
