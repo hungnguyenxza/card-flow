@@ -1,0 +1,196 @@
+#card-flow{
+    height: calc(100vh - 155px);
+    overflow: scroll;
+    position: relative;
+}
+#card-flow-container {
+    z-index: 10;
+    padding: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+    .card-flow-vertical:last-child {
+        padding-right: 145px;
+    }
+.card-flow-vertical.card-flow-vertical-left{
+    margin-left: 130px;
+}
+
+.card-flow-vertical {
+    width: 330px;
+    height: 100%;
+}
+
+.card-content {
+    width: 330px;
+    height: 170px;
+    margin-bottom: 58px;
+    border-radius: 12px;
+    user-select: none;
+}
+
+    .card-content:not(.empty-card) {
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+.card-border {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 10px 0;
+}
+
+    .card-border .card-title {
+        display: flex;
+        height: 35%;
+        margin-bottom: 0;
+    }
+
+        .card-border .card-title .card-title-border {
+            flex: 1;
+            border-radius: 100px;
+        }
+
+        .card-border .card-title .card-title-value {
+            flex: 60;
+            text-overflow: ellipsis;
+            overflow-y: hidden;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+            .card-border .card-title .card-title-value a {
+                text-decoration: none;
+                color: #505050;
+                font-size: 17px;
+                cursor: pointer;
+            }
+            .card-border .card-title .card-title-value a:hover {
+                color: #3f3f3f;
+                text-decoration: underline !important;
+            }
+
+            .card-border .card-avatar img {
+                width: 50px;
+                height: 50px;
+            }
+
+    .card-border .card-description {
+        display: flex;
+        padding: 0 15px;
+        height: 45%;
+    }
+
+        .card-border .card-description .card-avatar {
+            flex: 1;
+            margin: 0;
+        }
+
+        .card-border .card-description .card-due-in {
+            flex: 3;
+            margin: 0;
+            font-size: 16px;
+        }
+
+    .card-border .card-progress {
+        display: flex;
+        padding: 0 0 0 15px;
+    }
+
+        .card-border .card-progress .card-progress-bar {
+            flex: 5;
+            margin: 0;
+        }
+
+        .card-border .card-progress .card-progress-value {
+            flex: 1;
+            margin: 0;
+            padding-left: 10px;
+        }
+
+            .card-border .card-progress .card-progress-value .card-progress-value-text {
+                width: 100%;
+                font-size: 16px;
+            }
+
+        .card-border .card-progress .progress {
+            height: 0.35rem;
+            width: 100%;
+        }
+
+        .card-border .card-progress .card-content-menu {
+            font-size: 24px;
+            width: 8%;
+            text-align: center;
+        }
+
+.start-point {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #1bc5bd;
+    top: calc(50% - 13px);
+    right: -13px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+}
+
+.end-point {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    /*background-color: #000;*/
+    top: calc(50% - 5px);
+    left: -5px;
+    cursor: pointer;
+}
+.start-point i {
+    color: #fff;
+    /* font-size: 1.4em; */
+}
+
+.div-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*margin-top: -177px;
+    margin-left: -127px;*/
+}
+
+
+.card-menu {
+    width: 158px;
+    z-index: 20;
+    box-shadow: 0 4px 5px 3px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    display: none;
+    right: 20px;
+    bottom: 8px;
+    background-color: #fff;
+    transition: all ease-in 0.2s;
+    border-radius: 5px;
+}
+
+    .card-menu .menu-options {
+        list-style: none;
+        padding: 0;
+        z-index: 1;
+        margin: 0;
+    }
+
+        .card-menu .menu-options .menu-option {
+            font-weight: 500;
+            z-index: 1;
+            font-size: 14px;
+            padding: 8px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+            .card-menu .menu-options .menu-option:hover {
+                background: rgba(0, 0, 0, 0.2);
+            }
