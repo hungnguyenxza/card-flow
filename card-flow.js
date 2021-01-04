@@ -258,7 +258,7 @@ $(document).on('click', '.start-point', function () {
                 scrollLeft: (offSet.left - offSetContainer.left - bufferLeft) * defaultZoomRatio,
                 scrollTop: (offSet.top - offSetContainer.top - bufferTop) * defaultZoomRatio,
             };
-            $(cardFlowContainer).animate(scrollTo, 800);
+            $([document.documentElement, document.body]).animate(scrollTo, 800);
         }, 100);
     }
 });
@@ -288,7 +288,7 @@ function getTemplateCard(card, isFirstParent) {
             <div class="card-title">
                 <div class="card-title-border ${object_type_class}"></div>
                 <div class="card-title-value">
-                    <a href="#" data-title="Goal detail" title="${card.name}" hide-footer="true" class="fw-bolder btn-modal font-weight-bold">
+                    <a href="#" onclick="goalDetail(${card.cardId})" data-title="Goal detail" title="${card.name}" hide-footer="true" class="fw-bolder btn-modal font-weight-bold">
                         ${card.name}
                     </a>
                 </div>
@@ -320,7 +320,7 @@ function getTemplateCard(card, isFirstParent) {
             ${endPointHtml}
             <div class="card-menu">
                 <ul class="menu-options">
-                    <li class="menu-option add-new-card">
+                    <li class="menu-option add-new-card" onclick="createNewGoal(${card.cardId})">
                         <i class="fa fa-plus"></i>&nbsp;Create new goal
                     </li>
                 </ul>
@@ -338,6 +338,12 @@ function closeAllChilds(card) {
             closeAllChilds(child);
         }
     }
+}
+function goalDetail(cardId){
+    alert(`Goal detail: Goal ${cardId}`);
+}
+function createNewGoal(cardId){
+    alert(`Okay, create new goal from ${cardId}`);
 }
 $(document).on('click', '.card-content-menu', function (e) {
     e.preventDefault();
