@@ -77,7 +77,6 @@ function drawLine(startPoint, endPoint, width, height, index, total) {
     });
     document.body.prepend(div);
 }
-
 function drawCurve(startPoint, endPoint, width, height, index, total) {
     let $startPoint = $(`.start-point[data-point="${startPoint}"]`);
     let $endPoint = $(`.end-point[data-point="${endPoint}"]`);
@@ -152,7 +151,6 @@ function drawCurve(startPoint, endPoint, width, height, index, total) {
 
     $('#card-flow-container').prepend(div);
 }
-
 function drawAllLine() {
     $('.div-svg').remove();
     let widthBody = $('#card-flow-container').innerWidth() - 45;
@@ -168,7 +166,6 @@ function drawAllLine() {
         }
     });
 }
-
 function displayCards(cards) {
     $(cardFlowContainer).html('');
     for (let i = 0; i < cards.length; i++) {
@@ -227,7 +224,6 @@ function displayChildCards(childCards, level, parentId, parentIndex) {
     let lastChildIndex = $(cardFlowVeritals).find(`.card-content[data-id="${lastChildID}"]`).prevAll().length;
     return [firstChildIndex, lastChildIndex];
 }
-
 $(document).on('click', '.start-point', function () {
     let cardContent = $(this).closest('.card-content');
     let dataPoint = $(this).closest('.start-point').data('point');
@@ -266,9 +262,6 @@ $(document).on('click', '.start-point', function () {
         }, 100);
     }
 });
-
-displayCards(cardData);
-
 function getTemplateCard(card, isFirstParent) {
     let progress_class = card.objective_type - 1 < 0 || card.objective_type > progressBarTypes.length
         ? progressBarTypes[0] : progressBarTypes[card.objective_type - 1];
@@ -336,7 +329,6 @@ function getTemplateCard(card, isFirstParent) {
     </div>`;
     return result;
 }
-
 function closeAllChilds(card) {
     let childCards = card.aligns;
     for (let i = 0; i < childCards.length; i++) {
@@ -356,3 +348,6 @@ $(document).on('click', '.card-content-menu', function (e) {
 $(document).on('click', document.body, function (e) {
     $('.card-menu').hide();
 });
+
+
+displayCards(cardData);
