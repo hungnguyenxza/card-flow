@@ -6,9 +6,7 @@
 #card-flow-container {
     z-index: 10;
     padding: 30px;
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
 }
     .card-flow-vertical:last-child {
         padding-right: 145px;
@@ -155,10 +153,6 @@
 
 .div-svg {
     position: absolute;
-    top: 0;
-    left: 0;
-    /*margin-top: -177px;
-    margin-left: -127px;*/
 }
 
 

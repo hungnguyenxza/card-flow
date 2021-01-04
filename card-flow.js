@@ -90,13 +90,13 @@ function drawCurve(startPoint, endPoint, width, height, index, total) {
         'height': height,
     });
 
-    let offSetContainer = $(cardFlowContainer).offset();
+    let offSetVertical = $(cardFlowVeritals).offset();
 
-    var startX = $startPoint.offset().left - offSetContainer.left + ($startPoint.width() / 2);
-    var startY = $startPoint.offset().top - offSetContainer.top + ($startPoint.width() / 2);
+    var startX = $startPoint.offset().left - offSetVertical.left + ($startPoint.width() / 2);
+    var startY = $startPoint.offset().top - offSetVertical.top + ($startPoint.width() / 2);
 
-    var endX = $endPoint.offset().left - offSetContainer.left + ($endPoint.width() / 2);
-    var endY = $endPoint.offset().top - offSetContainer.top + ($endPoint.width() / 2);
+    var endX = $endPoint.offset().left - offSetVertical.left + ($endPoint.width() / 2);
+    var endY = $endPoint.offset().top - offSetVertical.top + ($endPoint.width() / 2);
 
     var change = (index - 0.5 - (total / 2)) * (iconHeight / (total + 1));
     startY = startY + change;
@@ -153,8 +153,8 @@ function drawCurve(startPoint, endPoint, width, height, index, total) {
 }
 function drawAllLine() {
     $('.div-svg').remove();
-    let widthBody = $('#card-flow-container').innerWidth() - 45;
-    let heightBody = $('#card-flow-container').innerHeight() - 45;
+    let widthBody = $('#card-flow-container').width();
+    let heightBody = $('#card-flow-container').height();
 
     $('.start-point').each(function () {
         let childIDs = `${$(this).data('child-ids')}`.split(',');
